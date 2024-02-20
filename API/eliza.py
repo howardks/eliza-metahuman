@@ -221,7 +221,8 @@ class Eliza:
             if output is None:
                 break
 
-            print(output)
+            #print(output)
+            return output
 
         print(self.final())
 
