@@ -22,4 +22,3 @@ angry = "I am angry I cannot nap"
 print(te.get_emotion(mixedEmotions))
 print(te.get_emotion(sad))
 print(te.get_emotion(angry))
-
