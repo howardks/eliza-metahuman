@@ -37,6 +37,10 @@ class Eliza:
         self.keys = {}
         self.memory = []
 
+        # Add a default 'xnone' key if it's not present
+        if 'xnone' not in self.keys:
+            self.keys['xnone'] = Key('xnone', 1, [Decomp([], False, [['I', 'am', 'not', 'sure', 'I', 'understand', 'you']])])
+
     def load(self, path):
         key = None
         decomp = None
