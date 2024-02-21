@@ -1,8 +1,4 @@
 import text2emotion as te
-<<<<<<< Updated upstream
-import eliza
-=======
->>>>>>> Stashed changes
 
 # Testing text2emotion
 
