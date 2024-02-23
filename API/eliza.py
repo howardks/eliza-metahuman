@@ -2,6 +2,7 @@ import logging
 import random
 import re
 from collections import namedtuple
+from text2emotion import get_emotion
 
 # Fix Python2/Python3 incompatibility
 try: input = raw_input
@@ -35,6 +36,10 @@ class Eliza:
         self.synons = {}
         self.keys = {}
         self.memory = []
+
+        # Add a default 'xnone' key if it's not present
+        if 'xnone' not in self.keys:
+            self.keys['xnone'] = Key('xnone', 1, [Decomp([], False, [['I', 'am', 'not', 'sure', 'I', 'understand', 'you']])])
 
     def load(self, path):
         key = None
@@ -203,6 +208,10 @@ class Eliza:
                 output = self._next_reasmb(self.keys['xnone'].decomps[0])
                 log.debug('Output from xnone: %s', output)
 
+        # Analyze the input text for emotions
+        emotions = get_emotion(text)
+        emotion_text = " ".join([f"{key}: {value}" for key, value in emotions.items()])
+        output.append(emotion_text)
         return " ".join(output)
 
     def initial(self):
