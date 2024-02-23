@@ -15,8 +15,8 @@ def synthesize_speech(text, output_file, voice_id='Joanna', output_format='mp3')
     polly_client = boto3.client(
     'polly',
     region_name='us-east-1',
-    aws_access_key_id='AKIAXEPOJM74MAEXM7SJ',
-    aws_secret_access_key='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'
+    aws_access_key_id='myAcccessKeyIdGoesHere',
+    aws_secret_access_key='mySecretAcccessKeyIdGoesHere'
 )
 
 
