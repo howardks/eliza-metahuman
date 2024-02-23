@@ -212,7 +212,6 @@ class Eliza:
         emotions = get_emotion(text)
         emotion_text = " ".join([f"{key}: {value}" for key, value in emotions.items()])
         output.append(emotion_text)
-
         return " ".join(output)
 
     def initial(self):
