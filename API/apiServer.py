@@ -19,27 +19,6 @@ eliza_instance = Eliza()
 # Load Eliza with doctor.txt
 eliza_instance.load('doctor.txt')
 
-@app.route('/', methods=['GET'])
-def home():
-    return jsonify({'response': 'Hello World'})
-
-# This is the example endpoint
-@app.route('/process_string', methods=['GET'])
-def process_string():
-    # Get the string from the GET request
-    input_string = request.args.get('input_string')
-
-    # Process the string (for demonstration, just reverse it)
-    processed_string = input_string[::-1]
-
-    # Prepare the response
-    response = {
-        'processed_string': processed_string
-    }
-
-    # Return the response as JSON
-    return jsonify(response)
-
 # This is the endpoint y'all need to modify to connect to Eliza
 @app.route('/eliza', methods=['GET'])
 def eliza_endpoint():

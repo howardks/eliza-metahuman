@@ -116,6 +116,7 @@ key: hello
   decomp: *
     reasmb: How do you do.  Please state your problem.
     reasmb: Hi.  What seems to be your problem ?
+    reasmb: Hey, How can I help you today ?
 key: computer 50
   decomp: *
     reasmb: Do computers worry you ?
@@ -188,6 +189,16 @@ key: i
     reasmb: Has your treatment made you (3) ?
     reasmb: What makes you (3) just now ?
     reasmb: Can you explan why you are suddenly (3) ?
+  decomp: * i am * @angry *
+    reasmb: What makes you (3) just now ?
+    reasmb: Can you explan why you are suddenly (3) ?
+  decomp: * i am * @surprised *
+    reasmb: What makes you (3) just now ?
+    reasmb: Can you explan why you are suddenly (3) ?
+    reasmb: Explain why are you (3) ?
+  decomp: * i am * @fear *
+    reasmb: Why are you scared ?
+    reasmb: It is normal to feel (3) 
   decomp: * i was *
     reasmb: goto was
   decomp: * i @belief * i *
