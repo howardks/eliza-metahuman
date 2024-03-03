@@ -266,7 +266,7 @@ class Eliza:
 
     def run(self):
         # Synthesize initial message
-        self.synthesize_speech("How do you do. Please tell me your problem.")
+        self.synthesize_speech(self.initial())
         print(self.initial())
 
         while True:
