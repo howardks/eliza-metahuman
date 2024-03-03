@@ -1,7 +1,7 @@
 {
 	"data":
 	{
-		"id": "0EDDD2BE4EECBC9A9818579D9CDB26E0",
+		"id": "95FE2C9646CCBF90C8A3F2BA8BD4D188",
 		"type": "audioToLipSync",
 		"attributes":
 		{
@@ -33,8 +33,8 @@
 		"OS": "Windows",
 		"local": "en-US",
 		"prev_type": "atl",
-		"prev_size": "30369",
-		"latency": "1.0",
+		"prev_size": "35409",
+		"latency": "2.0",
 		"prev_combo_atl": false,
 		"prev_combo_chat": false,
 		"prev_combo_tts": false,
