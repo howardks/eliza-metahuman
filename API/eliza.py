@@ -260,7 +260,7 @@ class Eliza:
 
     def run(self):
         # Synthesize initial message
-        self.synthesize_speech("How do you do. Please tell me your problem.")
+        self.synthesize_speech(self.initial())
         print(self.initial())
 
         while True:
@@ -273,7 +273,7 @@ class Eliza:
             print(output)
             
         # Synthesize exit message
-        self.synthesize_speech("Goodbye. Thank you for talking to me.")
+        self.synthesize_speech(self.final())
         print(self.final())
 
 
