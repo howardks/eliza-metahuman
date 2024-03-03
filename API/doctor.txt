@@ -114,6 +114,7 @@ key: xforeign
     reasmb: I speak only English.
 key: hello
   decomp: *
+    reasmb: Hey, I am Eliza. How are you today ?
     reasmb: How do you do.  Please state your problem.
     reasmb: Hi.  What seems to be your problem ?
     reasmb: Hey, How can I help you today ?
@@ -329,6 +330,9 @@ key: why
     reasmb: goto what
   decomp: *
     reasmb: goto what
+  key: how 
+    decomp: * how *
+    reasmb: How do you feel about that ?
 key: everyone 2
   decomp: * @everyone *
     reasmb: Realy, (2) ?
@@ -368,4 +372,36 @@ key: alike 10
 key: like 10
   decomp: * @be * like *
     reasmb: goto alike
+key: family 10
+decomp: * family * 
+reasmb: Tell me more about your family.
+decomp: * parents * 
+reasmb: How do you feel about your parents?
+key: work 10
+decomp: * work * 
+reasmb: How's work been going for you?
+decomp: * job * 
+reasmb: What do you do for a living?
+key: health 10
+decomp: * health * 
+reasmb: Have you been feeling well lately?
+decomp: * sick * 
+reasmb: Do you need to see a doctor?
+key: relationships 10
+decomp: * boyfriend * 
+reasmb: Tell me more about your relationship with your boyfriend.
+decomp: * girlfriend * 
+reasmb: How are things with your girlfriend?
+key: anger 10
+decomp: * anger * 
+reasmb: It's okay to feel angry sometimes. Let's talk about why you're feeling this way.
+key: sadness 10
+decomp: * sadness * 
+reasmb: I'm here for you. Please tell me what's been making you feel sad.
+key: happiness 10
+decomp: * happiness * 
+reasmb: That's wonderful! What's been bringing you joy?
+key: fear 10
+decomp: * fear * 
+reasmb: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
    
