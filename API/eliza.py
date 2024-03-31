@@ -174,6 +174,9 @@ class Eliza:
         return None
 
     def respond(self, text):
+        emotions = get_emotion(text)
+        emotion = max(emotions, key=emotions.get)
+
         if text.lower() in self.quits:
             return None
 
@@ -208,10 +211,6 @@ class Eliza:
                 output = self._next_reasmb(self.keys['xnone'].decomps[0])
                 log.debug('Output from xnone: %s', output)
 
-        # Analyze the input text for emotions
-        emotions = get_emotion(text)
-        emotion_text = " ".join([f"{key}: {value}" for key, value in emotions.items()])
-        output.append(emotion_text)
         return " ".join(output)
 
     def initial(self):
@@ -230,8 +229,7 @@ class Eliza:
             if output is None:
                 break
 
-            #print(output)
-            return output
+            print(output)
 
         print(self.final())
 
