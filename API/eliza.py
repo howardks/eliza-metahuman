@@ -173,7 +173,10 @@ class Eliza:
             return output
         return None
 
-    def respond(self, text, emotion=None):
+    def respond(self, text):
+        emotions = get_emotion(text)
+        emotion = max(emotions, key=emotions.get)
+
         if text.lower() in self.quits:
             return None
 
@@ -222,9 +225,7 @@ class Eliza:
         while True:
             sent = input('> ')
 
-            # Analyze the input for emotions
-            emotions = get_emotion(sent)
-            output = self.respond(sent, emotion=emotions)
+            output = self.respond(sent)
             if output is None:
                 break
 
