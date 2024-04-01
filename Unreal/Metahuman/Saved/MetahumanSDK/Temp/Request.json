@@ -1,0 +1,43 @@
+{
+	"data":
+	{
+		"id": "95FE2C9646CCBF90C8A3F2BA8BD4D188",
+		"type": "audioToLipSync",
+		"attributes":
+		{
+			"atl":
+			{
+				"platform": "unreal",
+				"rigVersion": "shapes_2.0",
+				"rigType": "metahuman",
+				"engine": "latest",
+				"answerFormat": "json-anim",
+				"explicitEmotion": "calm",
+				"eyeMovementParameters":
+				{
+					"eyeMovementMode": "mocap"
+				},
+				"neckMovementParameters":
+				{
+					"neckMovementMode": "none"
+				}
+			}
+		}
+	},
+	"meta":
+	{
+		"platform": "unreal",
+		"platform_version": "5.3",
+		"editor": true,
+		"plugin_version": "1.7.0",
+		"OS": "Windows",
+		"local": "en-US",
+		"prev_type": "atl",
+		"prev_size": "35409",
+		"latency": "2.0",
+		"prev_combo_atl": false,
+		"prev_combo_chat": false,
+		"prev_combo_tts": false,
+		"prev_audio_length": 2
+	}
+}

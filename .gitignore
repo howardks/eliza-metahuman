@@ -239,3 +239,5 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Pres2DemoScript.txt
+Pres2Video.mp4
