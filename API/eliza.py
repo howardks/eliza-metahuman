@@ -10,13 +10,11 @@ except NameError: pass
 
 log = logging.getLogger(__name__)
 
-
 class Key:
     def __init__(self, word, weight, decomps):
         self.word = word
         self.weight = weight
         self.decomps = decomps
-
 
 class Decomp:
     def __init__(self, parts, save, reasmbs):
@@ -24,7 +22,6 @@ class Decomp:
         self.save = save
         self.reasmbs = reasmbs
         self.next_reasmb_index = 0
-
 
 class Eliza:
     def __init__(self):
@@ -176,7 +173,8 @@ class Eliza:
     def respond(self, text):
         emotions = get_emotion(text)
         emotion = max(emotions, key=emotions.get)
-
+        print(emotions)
+        print(emotion)
         if text.lower() in self.quits:
             return None
 
