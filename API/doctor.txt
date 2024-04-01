@@ -4,6 +4,7 @@ final: Goodbye, Thank you for talking to me.
 quit: bye
 quit: goodbye
 quit: quit
+quit: exit
 
 pre: dont don't
 pre: cant can't
@@ -35,10 +36,9 @@ post: i'm you are
 synon: belief feel think believe wish
 synon: family mother mom father dad sister brother wife children child
 synon: desire want need
-synon: sad unhappy depressed sick
-synon: happy elated glad better
 synon: cannot can't
-synon: everyone everybody nobody no one
+synon: everyone everybody 
+synon: nobody noone
 synon: be am is are was
 
 key: xnone
@@ -48,64 +48,24 @@ key: xnone
     reasmb: What does that suggest to you?
     reasmb: Do you feel strongly about discussing such things?
 
-key: deutsch
-  decomp: *
-    reasmb: goto xforeign
-    reasmb: I told you before, I don't understand German.
-
-key: francais
-  decomp: *
-    reasmb: goto xforeign
-    reasmb: I told you before, I don't understand French.
-
-key: italiano
-  decomp: *
-    reasmb: goto xforeign
-    reasmb: I told you before, I don't understand Italian.
-
-key: espanol
-  decomp: *
-    reasmb: goto xforeign
-    reasmb: I told you before, I don't understand Spanish.
-
-key: xforeign
-  decomp: *
-    reasmb: I speak only English.
-
-key: family 10
-  decomp: * family * 
-    reasmb: Tell me more about your family.
-  decomp: * parents * 
-    reasmb: How do you feel about your parents?
-  decomp: * sibling *
-    reasmb: How do you feel about your sibling?
-  decomp: * siblings *
-    reasmb: How do you feel about your siblings?
-
-key: work 10
-  decomp: * work * 
-    reasmb: How's work been going for you?
-  decomp: * job * 
-    reasmb: What do you do for a living?
-
-key: health 10
-  decomp: * health * 
-    reasmb: Have you been feeling well lately?
-  decomp: * sick * 
-    reasmb: Do you need to see a doctor?
-
-key: relationship 10
-  decomp: * boyfriend * 
-    reasmb: Tell me more about your relationship with your boyfriend.
-  decomp: * girlfriend * 
-    reasmb: How are things with your girlfriend?
-
 key: angry 10
-  decomp: * anger * 
+  decomp: * @belief *
+    reasmb: Are you mad about (3) ?
+  decomp: * @family *
+    reasmb: Please tell me more about why you are mad at your (2) .
+  decomp: * @desire *
+    reasmb: Are you mad about (3) ?
+  decomp: * @cannot *
+    reasmb: Are you angry that you can't (3) ?
+  decomp: * @everyone *
+    reasmb: Are you mad at everyone (3) ?
+  decomp: * @nobody *
+    reasmb: Are you mad that noone (3) ?
+  decomp: * 
     reasmb: It's okay to feel angry sometimes. Let's talk about why you're feeling this way.
 
 key: sad 10
-  decomp: * sad * 
+  decomp: *  
     reasmb: I'm here for you. Please tell me what's been making you feel sad.
 
 key: happy 10
@@ -113,15 +73,11 @@ key: happy 10
     reasmb: That's wonderful! What's been bringing you joy?
 
 key: fear 10
-  decomp: * fear * 
+  decomp: * 
     reasmb: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
 
-key: stressful 10
-  decomp: * stressful *
-    reasmb: What causes you to be stressed?
-  decomp: * school *
-    reasmb: School can be demanding. Are you finding it difficult to manage your workload?
-  decomp: * work *
-    reasmb: Work can be stressful. Is it becoming challenging to balance work and other responsibilities?
-  decomp: * overload *
-    reasmb: It sounds like you're feeling overloaded. Is there too much on your plate right now?
+key: surprise 10
+  decomp: * dog *
+    reasmb: Why are you surprised your dog (2) ? 
+  decomp: * 
+    reasmb: Wow, that is surprising! Please tell me more.

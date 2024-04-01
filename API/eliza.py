@@ -191,6 +191,9 @@ class Eliza:
         words = self._sub(words, self.pres)
         log.debug('After pre-substitution: %s', words)
 
+        words.insert(0, emotion.lower())
+        print(words)
+
         keys = [self.keys[w.lower()] for w in words if w.lower() in self.keys]
         keys = sorted(keys, key=lambda k: -k.weight)
         log.debug('Sorted keys: %s', [(k.word, k.weight) for k in keys])
