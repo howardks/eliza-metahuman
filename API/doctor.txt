@@ -32,14 +32,10 @@ post: you I
 post: my your
 post: i'm you are
 
-synon: belief feel think believe wish
-synon: family mother mom father dad sister brother wife children child
-synon: desire want need
-synon: sad unhappy depressed sick
-synon: happy elated glad better
-synon: cannot can't
-synon: everyone everybody nobody no one
-synon: be am is are was
+synon: happy joyful delighted pleased content
+synon: sad unhappy miserable sorrowful depressed
+synon: fear scared afraid anxious terrified
+synon: angry mad furious enraged annoyed
 
 key: xnone
   decomp: *
@@ -125,3 +121,17 @@ key: stressful 10
     reasmb: Work can be stressful. Is it becoming challenging to balance work and other responsibilities?
   decomp: * overload *
     reasmb: It sounds like you're feeling overloaded. Is there too much on your plate right now?
+
+key: day 10
+  decomp: * bad day *
+    reasmb: Why did you have a bad day?
+  decomp: * good day *
+    reasmb: Why did you have a good day?
+
+key: dog 10
+  decomp: * lost * 
+    reasmb: I am sorry you lost your dog. Try calling animal shelters
+  decomp: * dog died * 
+    reasmb: I am sorry your dog died. How are you feeling?
+
+
