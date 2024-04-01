@@ -112,6 +112,10 @@ key: fear 10
   decomp: * fear * 
     reasmb: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
 
+key: depressed
+  decomp: * depressed *
+    reasmb: I'm here for you. Please tell me what's been making you feel depressed.
+
 key: stressful 10
   decomp: * stressful *
     reasmb: What causes you to be stressed?
