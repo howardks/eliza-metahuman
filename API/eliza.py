@@ -173,8 +173,7 @@ class Eliza:
     def respond(self, text):
         emotions = get_emotion(text)
         emotion = max(emotions, key=emotions.get)
-        print(emotions)
-        print(emotion)
+
         if text.lower() in self.quits:
             return None
 
