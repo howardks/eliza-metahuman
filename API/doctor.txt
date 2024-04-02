@@ -35,9 +35,9 @@ post: i'm you are
 
 synon: belief feel think believe wish
 synon: family mother mom father dad sister brother wife children child
-synon: desire want need
+synon: desire want need 
 synon: cannot can't
-synon: everyone everybody 
+synon: everyone everybody
 synon: nobody noone
 synon: be am is are was
 
@@ -65,20 +65,66 @@ key: angry 10
     reasmb: It's okay to feel angry sometimes. Let's talk about why you're feeling this way.
 
 key: sad 10
+   decomp: * @belief *
+    reasmb: Are you sad about (3) ?
+  decomp: * @family *
+    reasmb: Please tell me more about why you are sad at your (2) .
+  decomp: * @desire *
+    reasmb: Are you sad about (3) ?
+  decomp: * @cannot *
+    reasmb: Are you sad that you can't (3) ?
+  decomp: * @everyone *
+    reasmb: Are you sad at everyone (3) ?
+  decomp: * @nobody *
+    reasmb: Are you sad that noone (3) ?
   decomp: *  
     reasmb: I'm here for you. Please tell me what's been making you feel sad.
 
 key: happy 10
-  decomp: * happy * 
+   decomp: * @belief *
+    reasmb: Are you happy about (3) ?
+  decomp: * @family *
+    reasmb: Please tell me more about why you are happy at your (2) .
+  decomp: * @desire *
+    reasmb: Are you happy about (3) ?
+  decomp: * @cannot *
+    reasmb: Are you happy that you can't (3) ?
+  decomp: * @everyone *
+    reasmb: Are you happy at everyone (3) ?
+  decomp: * @nobody *
+    reasmb: Are you happy that noone (3) ?
+  decomp: * 
     reasmb: That's wonderful! What's been bringing you joy?
 
 key: fear 10
+   decomp: * @belief *
+    reasmb: Do you fear about (3) ?
+  decomp: * @family *
+    reasmb: Please tell me more about why you fear your (2) .
+  decomp: * @desire *
+    reasmb: Are you fear about (3) ?
+  decomp: * @cannot *
+    reasmb: Are you angry that you can't (3) ?
+  decomp: * @everyone *
+    reasmb: Are you angry at everyone (3) ?
+  decomp: * @nobody *
+    reasmb: Are you angry that noone (3) ?
   decomp: * 
     reasmb: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
 
 key: surprise 10
-  decomp: * dog *
-    reasmb: Why are you surprised your dog (2) ? 
+   decomp: * @belief *
+    reasmb: Are you surprised about (3) ?
+  decomp: * @family *
+    reasmb: Please tell me more about why you are surprised at your (2) .
+  decomp: * @desire *
+    reasmb: Are you surprised about (3) ?
+  decomp: * @cannot *
+    reasmb: Are you surprised that you can't (3) ?
+  decomp: * @everyone *
+    reasmb: Are you surprised at everyone (3) ?
+  decomp: * @nobody *
+    reasmb: Are you surprised that noone (3) ?
   decomp: * 
     reasmb: Wow, that is surprising! Please tell me more.
 
