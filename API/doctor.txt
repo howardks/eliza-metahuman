@@ -16,8 +16,6 @@ pre: maybe perhaps
 pre: how what
 pre: when what
 pre: certainly yes
-pre: machine computer
-pre: computers computer
 pre: were was
 pre: you're you are
 pre: i'm i am
@@ -35,20 +33,37 @@ post: i'm you are
 
 synon: belief feel think believe wish
 synon: family mother mom father dad sister brother wife children child
-synon: desire want need 
+synon: desire want need
 synon: cannot can't
 synon: everyone everybody
 synon: nobody noone
-synon: be am is are was
+synon: verb be am is are was has had
+synon: animal dog cat fish animals
+synon: achievement raise promotion bonus award
+synon: ambivalent bad good
+synon: annoucement news
+synon: action pushed dragged slapped
+synon: fear heights darkness drowning spiders holes
 
+key: hello 
+  decomp: *
+    reasmb: Hey, I am Eliza. How are you today ?
+    reasmb: How do you do.  Please state your problem.
+    reasmb: Hi.  What seems to be your problem ?
+    reasmb: Hey, How can I help you today ?
+  
+key: thank
+  decomp: * thank you *
+    reasmb: You are welcomed, goodbye.
+    reasmb: Welcome !, goodbye .
+  
 key: xnone
   decomp: *
-    reasmb: I'm not sure I understand you.
     reasmb: Please go on.
     reasmb: What does that suggest to you?
     reasmb: Do you feel strongly about discussing such things?
 
-key: angry 10
+key: angry 
   decomp: * @belief *
     reasmb: Are you mad about (3) ?
   decomp: * @family *
@@ -64,7 +79,7 @@ key: angry 10
   decomp: * 
     reasmb: It's okay to feel angry sometimes. Let's talk about why you're feeling this way.
 
-key: sad 10
+key: sad 
    decomp: * @belief *
     reasmb: Are you sad about (3) ?
   decomp: * @family *
@@ -77,10 +92,10 @@ key: sad 10
     reasmb: Are you sad at everyone (3) ?
   decomp: * @nobody *
     reasmb: Are you sad that noone (3) ?
-  decomp: *  
+  decomp: *
     reasmb: I'm here for you. Please tell me what's been making you feel sad.
 
-key: happy 10
+key: happy 
    decomp: * @belief *
     reasmb: Are you happy about (3) ?
   decomp: * @family *
@@ -93,10 +108,14 @@ key: happy 10
     reasmb: Are you happy at everyone (3) ?
   decomp: * @nobody *
     reasmb: Are you happy that noone (3) ?
+  decomp: * @animal *
+    reasmb: (2) are great companions for people dealing with anxiety and depression
+  decomp: * thank you *
+    reasmb: goto thank
   decomp: * 
     reasmb: That's wonderful! What's been bringing you joy?
-
-key: fear 10
+  
+  key: fear
    decomp: * @belief *
     reasmb: Do you fear about (3) ?
   decomp: * @family *
@@ -109,10 +128,12 @@ key: fear 10
     reasmb: Are you angry at everyone (3) ?
   decomp: * @nobody *
     reasmb: Are you angry that noone (3) ?
+  decomp: * @fear *
+    reasmb: Visualize yourself successfully facing and overcoming your fear in your mind's eye. Imagining yourself coping calmly and confidently with the fear-inducing situation can help build your confidence and resilience.
   decomp: * 
     reasmb: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
 
-key: surprise 10
+  key: surprise
    decomp: * @belief *
     reasmb: Are you surprised about (3) ?
   decomp: * @family *
@@ -128,3 +149,16 @@ key: surprise 10
   decomp: * 
     reasmb: Wow, that is surprising! Please tell me more.
 
+key: my
+  decomp: * my * @family * screamed *
+    reasmb: Your (3) screamed at you, why so ?
+  decomp: * my privacy *
+    reasmb: Invading an indiviual's privacy is not okay, try explaining your boundaries!
+  decomp: * my * @animal * died *
+    reasmb: It's okay to feel sad. Your pet was a part of your family, and it's natural to grieve. 
+  decomp: * my * @animal * 
+    reasmb: What happened to your (3) ?
+
+key: i 
+  decomp: * i got a @achievement *
+    reasmb: Execellent, you should be proud of your (2) !

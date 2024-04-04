@@ -189,7 +189,6 @@ class Eliza:
         log.debug('After pre-substitution: %s', words)
 
         words.insert(0, emotion.lower())
-        print(words)
 
         keys = [self.keys[w.lower()] for w in words if w.lower() in self.keys]
         keys = sorted(keys, key=lambda k: -k.weight)
