@@ -2,7 +2,7 @@ scripts:
 
 Happy: How do you do. Please tell me your problem.
 user: Actually, I have good news
-eliza: That's wonderful! What's been bringing you joy?
+eliza: That's wonderful! Tell me more
 user: I got a bonus at work 
 eliza: Execellent, you should be proud of your bonus !
 user: Thank you eliza. 
@@ -37,13 +37,11 @@ eliza: Goodbye, Thank you for talking to me.
 Surprised:
 eliza: How do you do. Please tell me your problem.
 user: Actually, I have good news
-eliza: That's wonderful! What's been bringing you joy?
+eliza: That's wonderful! Tell me more
 user: I was surprised with a kitten
 eliza: Wow, that is surprising! Please tell me more.
 user: I've always preferred dogs, so when my friend surprised me with a cat, it caught me off guard. But I have to admit, this little furball has won me over with its charm!
-eliza: That's wonderful! What's been bringing you joy?
-user: animals make me happy
-eiza: animals are great companions for people dealing with anxiety and depression
+eiza: fur friends are great companions for people dealing with anxiety and depression
 user: Thank you for your help 
 eliza: You are welcomed, goodbye.
 user: goodbye
@@ -52,8 +50,6 @@ eliza: Goodbye, Thank you for talking to me.
 Fear:
 eliza: How do you do. Please tell me your problem.
 user: I have a phobia of the darkness
-eliza: It's natural to feel afraid sometimes. Let's explore what's causing this fear.
-user: phobia of heights 
 eliza: Visualize yourself successfully facing and overcoming your fear in your mind's eye. Imagining yourself coping calmly and confidently with the fear-inducing situation can help build your confidence and resilience.
 user: Thank you for your help 
 eliza: You are welcomed, goodbye.
