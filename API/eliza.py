@@ -1,6 +1,9 @@
 import logging
 import random
 import re
+import boto3
+import os
+import wave
 from collections import namedtuple
 from text2emotion import get_emotion
 
