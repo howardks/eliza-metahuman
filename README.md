@@ -2,7 +2,7 @@
 
 ## Description
 
-Please add the description here. 
+Our application combines Unreal Engine's immersive environments with five realistic Meta Humans and motion detection technology. Adding depth to the experience is the integration of the Eliza Therapist Chatbot, providing users with emotional support and guidance.
 
 ## Usage
 
