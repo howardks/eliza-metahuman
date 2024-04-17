@@ -1,6 +1,9 @@
 import logging
 import random
 import re
+import boto3
+import os
+import wave
 from collections import namedtuple
 from text2emotion import get_emotion
 
@@ -33,6 +36,12 @@ class Eliza:
         self.synons = {}
         self.keys = {}
         self.memory = []
+        # intialize amazon polly client
+        self.polly_client = boto3.client('polly', region_name='us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
+
+        # Add a default 'xnone' key if it's not present
+        if 'xnone' not in self.keys:
+            self.keys['xnone'] = Key('xnone', 1, [Decomp([], False, [['I', 'am', 'not', 'sure', 'I', 'understand', 'you']])])
 
         # Add a default 'xnone' key if it's not present
         if 'xnone' not in self.keys:
@@ -173,8 +182,7 @@ class Eliza:
     def respond(self, text):
         emotions = get_emotion(text)
         emotion = max(emotions, key=emotions.get)
-        print(emotions)
-        print(emotion)
+
         if text.lower() in self.quits:
             return None
 
@@ -190,7 +198,6 @@ class Eliza:
         log.debug('After pre-substitution: %s', words)
 
         words.insert(0, emotion.lower())
-        print(words)
 
         keys = [self.keys[w.lower()] for w in words if w.lower() in self.keys]
         keys = sorted(keys, key=lambda k: -k.weight)
@@ -212,7 +219,47 @@ class Eliza:
                 output = self._next_reasmb(self.keys['xnone'].decomps[0])
                 log.debug('Output from xnone: %s', output)
 
+        self.synthesize_speech(" ".join(output))
+        
         return " ".join(output)
+
+    def synthesize_speech(self, text, output_format='pcm', voice_id='Joanna'):
+        """
+        Synthesizes speech using Amazon Polly API and saves the result as a WAV file.
+
+        Args:
+            text (str): The text to be synthesized.
+            output_format (str): The output format (e.g., 'mp3', 'ogg_vorbis', 'pcm').
+            voice_id (str): The ID of the voice to be used (e.g., 'Joanna', 'Matthew', etc.).
+        """
+        # Synthesize speech
+        response = self.polly_client.synthesize_speech(
+            Text=text,
+            VoiceId=voice_id,
+            OutputFormat=output_format
+        )
+
+        # New code 
+        if "AudioStream" in response:
+            # Save Polly audio stream as WAV file
+            # Open a new WAV file
+            polly_audio_stream = response['AudioStream']
+            output_file_path = 'C:\\Users\\CSCI\\Documents\\GitHub\\modern-software-development-project\\Unreal\\Metahuman\\output.wav'
+            with wave.open(output_file_path, 'wb') as wav_file:
+                # Set parameters for the WAV file
+                wav_file.setnchannels(1)  # Mono
+                wav_file.setsampwidth(2)  # 16-bit
+                wav_file.setframerate(16000)  # Sample rate 16kHz
+                
+                # Read and decode the audio stream
+                audio_data = polly_audio_stream.read()
+                
+                # Write audio data to the WAV file
+                wav_file.writeframes(audio_data)
+            
+            print("Audio saved as:", output_file_path)
+        else:
+            print("Failed to synthesize speech.")
 
     def initial(self):
         return random.choice(self.initials)
@@ -221,6 +268,8 @@ class Eliza:
         return random.choice(self.finals)
 
     def run(self):
+        # Synthesize initial message
+        self.synthesize_speech(self.initial())
         print(self.initial())
 
         while True:
