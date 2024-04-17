@@ -2,16 +2,18 @@
 
 ## Description
 
+Please add the description here. 
+
 ## Usage
 
-### API
+### First, start the API
 
 The API can be started from the root directory using the following terminal commands.
 ```
-python.exe .\API\apiServer.py
+python .\API\apiServer.py
 ```
 
-### Unreal Engine
+### Then, start the Unreal Engine project
 
 - Install the Metahuman SDK from https://www.unrealengine.com/marketplace/en-US/item/66b869fa0d3748e78d422e59716597b6 to Unreal Engine
 - Obtain an API token for the Metahuman SDK. This is not a free service, so we will not be providing our API token. 
