@@ -1,5 +1,29 @@
 # Modern Software Development Project
 
+## Description
+
+Please add the description here. 
+
+## Usage
+
+### First, start the API
+
+The API can be started from the root directory using the following terminal commands.
+```
+python .\API\apiServer.py
+```
+
+### Then, start the Unreal Engine project
+
+- Install the Metahuman SDK from https://www.unrealengine.com/marketplace/en-US/item/66b869fa0d3748e78d422e59716597b6 to Unreal Engine. 
+- Obtain an API token for the Metahuman SDK. This is not a free service, so we will not be providing our API token. 
+- From the root directory, navigate to /Unreal/Metahuman.
+- Double click Metahuman.uproject to open. 
+- In Unreal Engine, navigate to Edit -> Project Settings -> Plugins -> Metahuman SDK. 
+- Enter your API token, save, and close the Project Settings window. 
+- From the Content Drawer, open the file named Level
+- Press Play! 
+
 Original files sourced from https://github.com/wadetb/eliza
 
 # Appended From Original README
