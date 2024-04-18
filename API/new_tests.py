@@ -75,6 +75,23 @@ class Eliza_Tests(unittest.TestCase):
         self.assertGreater(len(responses), 1)  # Ensure there's variation
 
 
+    def test_surprise_responses(self):
+        el = eliza.Eliza()
+        el.load('api/doctor.txt')
+        # Test surprise-related responses
+        self.assertIn(el.respond('I am surprised about the news.'),
+                    ['Are you surprised about the news?', 'Please tell me more about why you are surprised at the news.']['That is surprising, did you not expect that?'])
+       
+
+    def test_fear_responses(self):
+        el = eliza.Eliza()
+        el.load('api/doctor.txt')
+        # Test fear-related responses
+        self.assertIn(el.respond('I fear spiders.'),
+                    ['Do you fear about spiders?', 'Did you have a bad experience with them in the past?.'])
+        # Add more test cases for other fear-related phrases
+
+
     def test_edge_cases(self):
         el = eliza.Eliza()
         el.load('api/doctor.txt')  # Load patterns 
