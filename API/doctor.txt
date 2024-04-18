@@ -36,6 +36,7 @@ synon: animal dog cat fish animals
 synon: achievement raise promotion bonus award
 synon: ambivalent bad good
 synon: fear heights darkness drowning spiders holes
+synon: be am
 
 key: hello
   decomp: *
@@ -83,6 +84,8 @@ key: angry
     reasmb: It's okay to feel angry sometimes. Let's talk about why you're feeling this way.
 
 key: surprised
+  decomp: * about *
+    reasmb: Why are you surprised about (2) ?
   decomp: *
     reasmb: Wow, that is surprising! Please tell me more.
 
