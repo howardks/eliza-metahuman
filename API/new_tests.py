@@ -53,6 +53,7 @@ class Eliza_Tests(unittest.TestCase):
         self.assertIn(el.respond('I am sad about my cat.'), ['What happened to your cat ?'])
         self.assertEqual(el.final(), 'Goodbye, Thank you for talking to me.')
 
+
     def test_angry(self):
         el = eliza.Eliza()
         el.load('api/doctor.txt')
