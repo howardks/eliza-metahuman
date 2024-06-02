@@ -1,5 +1,7 @@
 # Modern Software Development Project
 
+Final project for CSCI 4322
+
 ## Description
 
 This application combines Unreal Engine's immersive environments with a realistic Metahuman and emotion detection technology. Adding depth to the experience is the integration of the Eliza Therapist Chatbot, providing users with emotional support and guidance.
